@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./PollApp.css";
 import { FaEye } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const PollApp = () => {
   const [polls, setPolls] = useState([
@@ -38,6 +39,15 @@ const PollApp = () => {
     },
     {
       type: "Rating Poll",
+      question: "",
+      options: ["", ""],
+    },  {
+      type: "Numeric Polls",
+      question: "",
+      options: ["", ""],
+    },
+    {
+      type: "Text Poll",
       question: "",
       options: ["", ""],
     },
@@ -114,9 +124,53 @@ const PollApp = () => {
   };
 
   return (
-    <div className="container-fluid my-4">
-      <div className="d-flex justify-content-between align-items-center mb-3">
-        <h2 className="">Polls</h2>
+    <div className="container-fluid mt-5 ">
+       <div>
+          <Link to="/">
+            <button
+              style={{
+                width: "135px",
+                height: "49px",
+                borderRadius: "",
+                fontSize: "14px",
+                fontWeight: "500",
+              }}
+              className="mainColor2 hovermaincolor rounded-top-only  bg-white  btn"
+            >
+              Owner
+            </button>
+          </Link>
+          <Link to="/">
+            <button
+              style={{
+                width: "135px",
+                height: "49px",
+                borderRadius: "10px",
+                fontSize: "14px",
+                fontWeight: "500",
+              }}
+              className="hovermaincolor  bg-white rounded-top border-top-only text-dark btn"
+            >
+              Tenant
+            </button>
+          </Link>
+          <Link to="/">
+            <button
+              style={{
+                width: "135px",
+                height: "49px",
+                borderRadius: "10px",
+                fontSize: "14px",
+                fontWeight: "500",
+              }}
+              className="hovermaincolor  bg-white rounded-top-only border-top-only text-dark btn"
+            >
+              Tenant
+            </button>
+          </Link>
+        </div>
+      <div className="d-flex justify-content-between bg-white  align-items-center mb-3">
+        <h4  className="semibold">Polls</h4>
 
         {/* Create Poll Modal */}
 
@@ -152,14 +206,14 @@ const PollApp = () => {
                 aria-label="Close"
               ></button>
             </div>
-            <div className="modal-body">
+            <div className="modal-body ">
               <div className="mb-3">
                 <label className="form-label ">
                   Polls <span className="text-danger">*</span>
                 </label>
-                <div className="dropdown">
+                <div className="dropdown radio-group">
                   <button
-                    className="btn text-start border col-12 dropdown-toggle"
+                    className="btn polltype text-start border col-12 dropdown-toggle"
                     type="button"
                     id="dropdownMenuButton"
                     data-bs-toggle="dropdown"
@@ -175,27 +229,23 @@ const PollApp = () => {
                     {predefinedPolls.map((poll, index) => (
                       <li key={index}>
                         <button
-                          className="dropdown-item  d-flex align-items-center"
+                          className="dropdown-item bg-white   d-flex align-items-center"
                           onClick={() =>
-                            setNewPoll({ ...newPoll, type: poll.type })
+                            setNewPoll({ ...newPoll, type: poll.type})
                           }
                         >
-                          <input className="" type="radio" name="poll" id="" />
+                          <input className="radio-group" type="radio" name="poll" id="" />
                           <img
                           name="poll"
 
                             src={
-                              poll.type === "Multichoice Poll"
-                                ? "src/Images/menu.png"
-                                : poll.type === "Ranking Poll"
-                                ? "path/to/ranking-icon.png"
-                                : "path/to/rating-icon.png"
+                              poll.type === "Multichoice Poll"?"src/Images/Multichoice.png": poll.type === "Ranking Poll"? " src/Images/ranking.png":poll.type === "Rating Poll"? "src/Images/rating.png":poll.type === "Numeric Poll"? "src/Images/numeric.png":poll.type === "Text Poll"? "src/Images/text.png":"src/Images/Vector.png"
                             }
                             alt={`${poll.type} Icon`}
                             className="me-2 ms-2"
-                            style={{ width: "20px", height: "20px" }}
+                            style={{color:"black" }}
                           />
-                          {poll.type}
+                         <span className="polltype">  {poll.type}</span>
                         </button>
                       </li>
                     ))}
@@ -208,7 +258,7 @@ const PollApp = () => {
                   type="text"
                   
                   placeholder="Ask a question"
-                  className="form-control"
+                  className="form-control polltype"
                   value={newPoll.question}
                   onChange={(e) =>
                     setNewPoll({ ...newPoll, question: e.target.value })
@@ -221,24 +271,24 @@ const PollApp = () => {
                   <input
                     type="text"
                     placeholder="Add"
-                    className="form-control"
+                    className="form-control polltype"
                     value={option}
                     onChange={(e) => updateOption(index, e.target.value)}
                   />
                 </div>
               ))}
             </div>
-            <div className="modal-footer">
+            <div className="modal-footer gap-2">
               <button
                 type="button"
-                className="btn btn-secondary"
+                className="btn btn1 bg-white text-black btn-secondary"
                 data-bs-dismiss="modal"
               >
                 Cancel
               </button>
               <button
                 type="button"
-                className="btn btn-primary"
+                className="btn btn1 mainColor2 text-white"
                 onClick={addPoll}
                 data-bs-dismiss="modal"
               >
