@@ -73,7 +73,7 @@ const SecurityProtocols = () => {
       className="row head   text-center align-items-center"
      
     >
-      <div className="col-3 fw-bold text-center">Title</div>
+      <div className="col-3 fw-bold text-start ">Title</div>
       <div className="col-3 fw-bold text-center">Description</div>
       <div className="col-3 fw-bold text-center">Date</div>
       <div className="col-3 fw-bold text-center">Time</div>
@@ -94,11 +94,11 @@ const SecurityProtocols = () => {
             alt="avatar"
             className="rounded-circle profileimg me-2"
           />
-          <span >{protocol.title}</span>
+          <span className='text-center'>{protocol.title}</span>
         </div>
 
         {/* Description */}
-        <div className="col-3  ">
+        <div className="col-3 text-center ">
           <p>{protocol.description}</p>
         </div>
 

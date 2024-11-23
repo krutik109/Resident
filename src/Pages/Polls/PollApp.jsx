@@ -124,68 +124,160 @@ const PollApp = () => {
   };
 
   return (
-    <div className="container-fluid mt-5 ">
-       <div>
-          <Link to="/">
+    
+    <div className="container-fluid ">
+       <div className=" d-flex  ">
+         <div className="border-bottom border-2 border-danger ">
+           <Link to="/">
             <button
-              style={{
-                width: "135px",
-                height: "49px",
-                borderRadius: "",
-                fontSize: "14px",
-                fontWeight: "500",
-              }}
-              className="mainColor2 hovermaincolor rounded-top-only  bg-white  btn"
-            >
-              Owner
+              
+              className=" poll3btn text-dark hovermaincolor rounded-top bg-white  btn"
+              >
+              Own Poll
             </button>
           </Link>
-          <Link to="/">
+              </div>
+              <div  className="border-bottom border-2 border-danger">
+           <Link to="/">
             <button
-              style={{
-                width: "135px",
-                height: "49px",
-                borderRadius: "10px",
-                fontSize: "14px",
-                fontWeight: "500",
-              }}
-              className="hovermaincolor  bg-white rounded-top border-top-only text-dark btn"
-            >
-              Tenant
+              
+              className=" poll3btn text-dark hovermaincolor rounded-top bg-white  btn"
+              >
+              New Poll
             </button>
           </Link>
-          <Link to="/">
+              </div>
+              <div  className="border-bottom border-2 border-danger">
+           <Link to="/" >
             <button
-              style={{
-                width: "135px",
-                height: "49px",
-                borderRadius: "10px",
-                fontSize: "14px",
-                fontWeight: "500",
-              }}
-              className="hovermaincolor  bg-white rounded-top-only border-top-only text-dark btn"
-            >
-              Tenant
+              
+              className="   text-dark poll3btn hovermaincolor rounded-top  bg-white  btn"
+              >
+              Previous Poll
             </button>
           </Link>
+              </div>
         </div>
-      <div className="d-flex justify-content-between bg-white  align-items-center mb-3">
-        <h4  className="semibold">Polls</h4>
+          {/* Poll Cards */} 
+      <div className=" bg-white rounded-3 align-items-center  ">
+       <div className="d-flex justify-content-between  ">
 
-        {/* Create Poll Modal */}
+        <h4  className="semibold mt-3 mx-2">Polls</h4>
+
+   
 
         <button
-          className="btn  mainColor2 text-white mb-3"
+          className="btn  mainColor2  mt-3 text-white  mb-3 me-2"
           data-bs-toggle="modal"
           data-bs-target="#createPollModal"
           onClick={() =>
             document.getElementById("createPollModal").classList.add("show")
           }
-        >
+          >
           Create Poll
         </button>
+          </div>
+
+          <div className="container-fluid bg-white ">
+        <div className="row">
+          {polls.map((poll, pollIndex) => {
+            const totalYes = poll.votes[0].yes;
+            const totalNo = poll.votes[0].no;
+            const totalVotes = totalYes + totalNo;
+            const yesPercent = totalVotes ? (totalYes / totalVotes) * 100 : 0;
+            const noPercent = totalVotes ? (totalNo / totalVotes) * 100 : 0;
+
+            return (
+              <div className="col-md-4   mb-4" key={pollIndex}>
+                <div className="card poll-card border-1 shadow">
+                  <div className="card-header d-flex align-items-center">
+                    <img
+                      src={poll.user?.avatar}
+                      alt="Avatar"
+                      className="rounded-circle me-3"
+                    />
+                    <div>
+                      <h6 className="username mb-0">
+                        {poll.user?.name || "Unknown User"}
+                      </h6>
+                      <small>{poll.type}</small>
+                    </div>
+                    <span className="badge  ms-auto">
+                      <FaEye className="me-1" />
+                      {poll.user?.score || 0}
+                    </span>
+                  </div>
+
+                  <div className="card-body">
+                    <p className="poll-question">{poll.question}</p>
+                    <small className="text-muted d-block mb-3">
+                    <img src="src/Images/tworadio.png" alt="" />  Select one or more options
+                    </small>
+
+                    <div className="d-flex justify-content-between align-items-center">
+                      <label className="d-flex align-items-center">
+                        <input
+                          type="radio"
+                          name={`poll-${pollIndex}`}
+                          value="yes"
+                          className="me-2"
+                          onChange={() => handleVote(pollIndex, "yes")}
+                        />
+                        Yes
+                      </label>
+                      <div>
+                        <img src="src/Images/totaluser.png" alt="" /> {totalYes}
+                      </div>
+                    </div>
+                    {/* Separate progress bars for Yes and No */}
+                    <div className="progress mb-3">
+                      <div
+                        className="progress-bar bg-success"
+                        role="progressbar"
+                        style={{ width: `${yesPercent}%` }}
+                      ></div>
+                    </div>
+
+                    <div className="d-flex justify-content-between align-items-center">
+                      <label className="d-flex align-items-center">
+                        <input
+                          type="radio"
+                          name={`poll-${pollIndex}`}
+                          value="no"
+                          className="me-2"
+                          onChange={() => handleVote(pollIndex, "no")}
+                        />
+                        No
+                      </label>
+                      <div>
+                        <img src="src/Images/totaluser.png" alt="" /> {totalNo}
+                      </div>
+                    </div>
+                    <div className="progress mb-3">
+                      <div
+                        className="progress-bar progressbarno"
+                        role="progressbar"
+                        style={{ width: `${noPercent}%` }}
+                      ></div>
+                    </div>
+
+                    {/* Radio buttons for Yes and No */}
+                    <div className="d-flex justify-content-between align-items-center"></div>
+                   <div className="d-flex justify-content-end">
+                     <small className="text-muted text-end">{poll.createdAt}</small>
+                    </div>
+                  </div>
+
+                 
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
       </div>
 
+{/* Create Poll Modal */}
       <div
         className="modal fade "
         id="createPollModal"
@@ -299,103 +391,8 @@ const PollApp = () => {
         </div>
       </div>
 
-      {/* Poll Cards */}
-      <div className="container my-4">
-        <div className="row">
-          {polls.map((poll, pollIndex) => {
-            const totalYes = poll.votes[0].yes;
-            const totalNo = poll.votes[0].no;
-            const totalVotes = totalYes + totalNo;
-            const yesPercent = totalVotes ? (totalYes / totalVotes) * 100 : 0;
-            const noPercent = totalVotes ? (totalNo / totalVotes) * 100 : 0;
-
-            return (
-              <div className="col-md-4   mb-4" key={pollIndex}>
-                <div className="card poll-card">
-                  <div className="card-header d-flex align-items-center">
-                    <img
-                      src={poll.user?.avatar}
-                      alt="Avatar"
-                      className="rounded-circle me-3"
-                    />
-                    <div>
-                      <h6 className="username mb-0">
-                        {poll.user?.name || "Unknown User"}
-                      </h6>
-                      <small>{poll.type}</small>
-                    </div>
-                    <span className="badge  ms-auto">
-                      <FaEye className="me-1" />
-                      {poll.user?.score || 0}
-                    </span>
-                  </div>
-
-                  <div className="card-body">
-                    <p className="poll-question">{poll.question}</p>
-                    <small className="text-muted d-block mb-3">
-                      Select one or more options
-                    </small>
-
-                    <div className="d-flex justify-content-between align-items-center">
-                      <label className="d-flex align-items-center">
-                        <input
-                          type="radio"
-                          name={`poll-${pollIndex}`}
-                          value="yes"
-                          className="me-2"
-                          onChange={() => handleVote(pollIndex, "yes")}
-                        />
-                        Yes
-                      </label>
-                      <div>
-                        <img src="src/Images/totaluser.png" alt="" /> {totalYes}
-                      </div>
-                    </div>
-                    {/* Separate progress bars for Yes and No */}
-                    <div className="progress mb-3">
-                      <div
-                        className="progress-bar bg-success"
-                        role="progressbar"
-                        style={{ width: `${yesPercent}%` }}
-                      ></div>
-                    </div>
-
-                    <div className="d-flex justify-content-between align-items-center">
-                      <label className="d-flex align-items-center">
-                        <input
-                          type="radio"
-                          name={`poll-${pollIndex}`}
-                          value="no"
-                          className="me-2"
-                          onChange={() => handleVote(pollIndex, "no")}
-                        />
-                        No
-                      </label>
-                      <div>
-                        <img src="src/Images/totaluser.png" alt="" /> {totalNo}
-                      </div>
-                    </div>
-                    <div className="progress mb-3">
-                      <div
-                        className="progress-bar progressbarno"
-                        role="progressbar"
-                        style={{ width: `${noPercent}%` }}
-                      ></div>
-                    </div>
-
-                    {/* Radio buttons for Yes and No */}
-                    <div className="d-flex justify-content-between align-items-center"></div>
-                  </div>
-
-                  <div className="card-footer text-end">
-                    <small className="text-muted">{poll.createdAt}</small>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+   
+    
     </div>
   );
 };

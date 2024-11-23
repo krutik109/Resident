@@ -9,7 +9,7 @@ import { FaTh } from 'react-icons/fa';
 const Sidebar = ({ toggleSidebar }) => {
   return (
     <>
-      <div className="row">
+      <div className="row bg-white ">
         {/* Close button for screens up to 767px */}
         <div className="col-12 d-md-none text-end mt-2">
           <button className="btn close-btn" onClick={toggleSidebar}>
@@ -18,7 +18,7 @@ const Sidebar = ({ toggleSidebar }) => {
         </div>
 
         <div className="col-md-12 mt-3 mb-3">
-          <h2 className="text-center">DashStack</h2>
+          <h2 className="text-center"><span className="mainColor">Dash</span>Stack</h2>
           <hr />
         </div>
 

@@ -1,10 +1,21 @@
-
+.container-fluid {
+  background-color: #ecf4ff;
+ 
+  border-radius: 12px;
+}
 .polltype{
   color: rgba(32, 34, 36, 1);
   font-size: 16px;
   font-weight: 600;
 }
+.poll3btn{
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
 
+  color:rgba(255, 255, 255, 1);
+
+}
 .username{
     font-weight: 600;
     font-size: 16px;

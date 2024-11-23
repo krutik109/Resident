@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import './EventParticipation.css'
 import { Link } from 'react-router-dom'
-import "./EventParticipation.css"
-import { FaEdit, FaEye, FaHome, FaTag, FaTrash, FaUser } from 'react-icons/fa';
+
+ 
 
 const EventParticipation = () => {
   const [events, setEvents] = useState([
@@ -67,11 +67,11 @@ const EventParticipation = () => {
     <div className='container-fluid'>
       <div className=' row justify-content-center' >
 <div>
-  <div className='d-flex justify-content-start mt-3 '>
+  <div className='d-flex justify-content-startmt-3 '>
     
-<Link to={"/eventparticipation"}>  <button className="participatebtn hovermaincolor rounded-top bg-white text-dark btn border-bottom  border-danger">
+<Link className=' border-bottom border-2 border-danger ' to={"/eventparticipation"}>  <button className="participatebtn hovermaincolor rounded-top bg-white text-dark btn border-bottom ">
   <span className='participatebtnspan'>Events Participate</span></button></Link> 
-<Link to="/activityparticipate"><button  className="participatebtn hovermaincolor border-bottom text-dark bg-white rounded-top border-danger btn">
+<Link className=' border-bottom  border-2 border-danger' to="/activityparticipate"><button  className="participatebtn hovermaincolor border-bottom text-dark bg-white rounded-top btn">
  <span className='participatebtnspan'> Activity Participate</span></button></Link>
   </div>
   <div className="container-fluid row bg-white">
