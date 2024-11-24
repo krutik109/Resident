@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import "./Sidebar.css";
 import { Link, NavLink } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
-import { FaCalendarAlt, FaTh } from "react-icons/fa";
-import { FaCableCar } from "react-icons/fa6";
+
 
 const Sidebar = ({ toggleSidebar }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -35,7 +34,7 @@ const Sidebar = ({ toggleSidebar }) => {
           {/* NavLink */}
           <NavLink
             className="navlink"
-            to="/"
+            to="/dashboard"
             style={{
               textDecoration: "none",
               color: "black",
@@ -61,7 +60,7 @@ const Sidebar = ({ toggleSidebar }) => {
           {/* NavLink */}
           <NavLink
             className="navlink"
-            to="/"
+            to="/personaldetail"
             style={{
               textDecoration: "none",
               color: "black",
@@ -84,7 +83,7 @@ const Sidebar = ({ toggleSidebar }) => {
           {/* NavLink */}
           <NavLink
             className="navlink"
-            to="/"
+            to="/serviceandcomplaint"
             style={{
               textDecoration: "none",
               color: "",
@@ -121,7 +120,7 @@ const Sidebar = ({ toggleSidebar }) => {
             </p>
           </NavLink>
         </div>
-     
+
         <div className=" col-md-12 d-flex  mt-1 mb-1">
           <img src="src/Images/dash.png" alt="" />
 
@@ -151,21 +150,21 @@ const Sidebar = ({ toggleSidebar }) => {
               </button>
               <div className="dropdown-menu">
                 <Link className="dropdown-item">
-                  <strong>Access Forums</strong>
+                  <p>Access Forums</p>
                 </Link>
                 <div className="">
                   <Link to={"/pollapp"} className="dropdown-item">
-                    <strong>Polls</strong>
+                    <p>Polls</p>
                   </Link>
                 </div>
                 <Link to={"/"} className="dropdown-item">
-                  <strong>Communities Discussion</strong>
+                  <p>Communities Discussion</p>
                 </Link>
               </div>
             </div>
           </NavLink>
         </div>
- 
+
         <div className=" col-md-12 d-flex  mt-1 mb-1">
           <img src="src/Images/dash.png" alt="" />
 
@@ -186,7 +185,7 @@ const Sidebar = ({ toggleSidebar }) => {
             <div className="dropdown-container hovermaincolor">
               <button className="dropdown-btn bg-white ">
                 <img
-                  src="src/Images/comunity.png"
+                  src="src/Images/wallet.png"
                   alt="icon"
                   className="dropdown-icon"
                 />
@@ -194,17 +193,16 @@ const Sidebar = ({ toggleSidebar }) => {
                 <span className="dropdown-arrow">▼</span>
               </button>
               <div className="dropdown-menu">
-              <div className="">
+                <div className="">
                   <Link to={"/"} className="dropdown-item">
-                    <strong>Maintanance Invoice</strong>
+                    <p>Maintanance Invoice</p>
                   </Link>
                 </div>
                 <div className="">
-                  <Link to={"/pollapp"} className="dropdown-item">
-                    <strong>Other Income Invoice</strong>
+                  <Link to={"/"} className="dropdown-item">
+                    <p>Other Income Invoice</p>
                   </Link>
                 </div>
-                
               </div>
             </div>
           </NavLink>
@@ -226,7 +224,8 @@ const Sidebar = ({ toggleSidebar }) => {
           >
             {/* Close sidebar on link click in small screens */}
             <p className=" p-2 hovermaincolor">
-              <FaTh className="" /> Security Protocols
+              <img src="src/Images/securityprotocol.png" alt="" /> Security
+              Protocols
             </p>
           </NavLink>
         </div>

@@ -2,12 +2,15 @@ import "./App.css";
 import Layout from "./components/Layout/Layout";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Dashboard from "./components/Dashboard/Dashboard";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 
 import EventParticipation from "./Pages/Event Participation/EventParticipation";
 import PollApp from "./Pages/Polls/PollApp";
 import SecurityProtocols from "./Pages/Security Protocol/SecurityProtocol";
 import ActivityParticipaes from "./Pages/Activity Participate/ActivityParticipate";
+import PersonalDetail from "./Pages/Personal Details/PersonalDetail";
+import PersonalDetailTenant from "./Pages/Personal Details/PersonalDetailTenant";
+import ServiceAndComplaint from "./Pages/Service And Complaint/ServiceAndComplaint";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -18,7 +21,7 @@ const App = () => {
         element: <Layout />,
         children: [
           {
-            path: "/",
+            path: "/dashboard",
             element: <Dashboard />,
           },
           {
@@ -38,6 +41,19 @@ const App = () => {
             path: "/securityprotocols",
             element: <SecurityProtocols />,
           },
+          {
+            path: "/personaldetail",
+            element: <PersonalDetail />,
+          },
+          {
+            path: "personaldetailtenant",
+            element: <PersonalDetailTenant />,
+          },
+          {
+            path: "serviceandcomplaint", 
+            element: <ServiceAndComplaint/>,
+          }
+
         ],
       },
     ],
