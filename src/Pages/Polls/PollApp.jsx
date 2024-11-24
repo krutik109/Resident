@@ -127,11 +127,11 @@ const PollApp = () => {
     
     <div className="container-fluid ">
        <div className=" d-flex  ">
-         <div className="border-bottom border-2 border-danger ">
-           <Link to="/">
+         <div className="border-bottom  border-2 border-danger ">
+           <Link to="/" className="">
             <button
               
-              className=" poll3btn text-dark hovermaincolor rounded-top bg-white  btn"
+              className=" poll3btn text-dark  hovermaincolor rounded-top bg-white  btn"
               >
               Own Poll
             </button>

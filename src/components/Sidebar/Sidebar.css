@@ -2,3 +2,19 @@ a {
   text-decoration: none;
   color: black;
 }
+.sidebarbtn{
+  text-decoration: none;
+  color: black;
+  height: 60px;
+  width: 245px;
+
+  font-style: poppins;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 10px;
+
+}
+.sidebaricon{
+  background-color: rgb(139, 137, 137);
+}
+
