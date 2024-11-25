@@ -27,14 +27,14 @@ const Sidebar = ({ toggleSidebar }) => {
           {/* Sidebar Image */}
           <img
             src="src/Images/dash.png"
-            className={`sidebarstyle ${isHovered ? "d-block" : "d-none"}`}
+            className={`sidebarstyle ${isHovered ? "d-inline-block" : "d-none"}`}
             alt=""
           />
 
           {/* NavLink */}
           <NavLink
             className="navlink"
-            to="/dashboard"
+            to="/"
             style={{
               textDecoration: "none",
               color: "black",
@@ -69,6 +69,7 @@ const Sidebar = ({ toggleSidebar }) => {
               fontStyle: "poppins",
               fontWeight: "500",
             }}
+            onClick={toggleSidebar}
           >
             <p className="p-2 hovermaincolor">
               <img className=" " src="src/Images/personalcard.png" alt="" />{" "}
@@ -92,6 +93,7 @@ const Sidebar = ({ toggleSidebar }) => {
               fontStyle: "poppins",
               fontWeight: "500",
             }}
+            onClick={toggleSidebar}
           >
             <p className="p-2 hovermaincolor">
               <img className=" " src="src/Images/servicecomplain.png" alt="" />{" "}
@@ -104,14 +106,7 @@ const Sidebar = ({ toggleSidebar }) => {
           <NavLink
             className="navlink"
             to="/eventparticipation"
-            style={{
-              textDecoration: "none",
-              color: "black",
-              height: "52px",
-              width: "245px",
-              fontStyle: "poppins",
-              fontWeight: "500",
-            }}
+          
             onClick={toggleSidebar}
           >
             {/* Close sidebar on link click in small screens */}

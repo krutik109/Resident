@@ -32,7 +32,7 @@ const Dashboard = () => {
     <div className="container-fluid resident-management">
       {/* Top Balance Cards */}
       <div className="row ">
-        <div className="col-lg-3 mb-3 ">
+        <div className="col-lg-3 mb-2">
           <div className="balance-card balance-card-orange">
             <div className="balance-info">
               <p className="mb-0 text-muted mt-3">Total Balance</p>
@@ -44,7 +44,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="col-lg-3 ">
+        <div className="col-lg-3 mb-2">
           <div className="balance-card balance-card-green">
             <div className="balance-info">
               <p className="mb-0 text-muted  mt-3">Total Income</p>
@@ -56,7 +56,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="col-lg-3 ">
+        <div className="col-lg-3 mb-2">
           <div className="balance-card balance-card-blue">
             <div className="balance-info">
               <p className="mb-0 text-muted  mt-3">Total Expense</p>
@@ -68,7 +68,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="col-lg-3">
+        <div className="col-lg-3 mb-2">
           <div className="balance-card balance-card-pink">
             <div className="balance-info">
               <p className="mb-0 text-muted  mt-3">Total Unit</p>
@@ -81,18 +81,18 @@ const Dashboard = () => {
         </div>
       </div>
       {/* Balance Chart and Sidebar Panels */}
-      <div className="row mb-2">
+      <div className="row mb-3">
         <div className="col-lg-6 ">
           <div className="card balance-chart">
             <BalanceChart />
           </div>
         </div>
 
-        <div className="col-lg-6">
+        <div className="col-lg-6 mt-1 ">
           <div className="row">
             {/* Important Numbers */}
             <div className="col-lg-6">
-              <div className="card border rounded" style={{ height: "330px" }}>
+              <div className="card border rounded" style={{ height: "415px" }}>
                 <div className="card-header d-flex justify-content-between align-items-center p-2">
                   <h5 style={{ fontSize: "20px" }}>Important Numbers</h5>
                   <button className="btn btn-primary" onClick={handleShowAddModal}>
@@ -140,7 +140,7 @@ const Dashboard = () => {
                   <div className="modal-backdrop show"></div>
                   <div className="modal fade show d-block" tabIndex="-1" role="dialog" style={{ backgroundColor: "rgba(0,0,0,0.5)" }}>
                     <div className="modal-dialog">
-                      <div className="modal-content" style={{ width: "400px", height: "420px", marginTop:"200px" }}>
+                      <div className="modal-content" style={{ width: "360px", height: "420px", marginTop:"200px" }}>
                         <div className="modal-header">
                           <h5 className="modal-title">Add Number</h5>
                           <button type="button" className="btn-close" onClick={handleCloseAddModal}></button>
@@ -186,7 +186,7 @@ const Dashboard = () => {
                   <div className="modal-backdrop show"></div>
                   <div className="modal fade show d-block" tabIndex="-1" role="dialog" style={{ backgroundColor: "rgba(0,0,0,0.5)" }}>
                     <div className="modal-dialog">
-                      <div className="modal-content" style={{ width: "400px", marginTop:"200px" }}>
+                      <div className="modal-content" style={{ width: "360px", marginTop:"200px" }}>
                         <div className="modal-header">
                           <h5 className="modal-title">Delete Number?</h5>
                           <button type="button" className="btn-close" onClick={handleCloseDeleteModal1}></button>
@@ -222,8 +222,8 @@ const Dashboard = () => {
               )}
             </div>
             {/* Pending Maintenances */}
-            <div className="col-lg-6">
-              <div className="card pending-maintenance" style={{ height: "330px" }}>
+            <div className="col-lg-6 mt-2">
+              <div className="card pending-maintenance" style={{ height: "410px" }}>
                 <div className="card-header d-flex justify-content-between align-items-center">
                   <h5 style={{ fontSize: "17px" }}>Pending Maintenances</h5>
                   <span className='text-primary'>View all</span>
@@ -233,7 +233,7 @@ const Dashboard = () => {
                   {[...Array(10)].map((_, index) => (
                     <div className="maintenance-item d-flex bd-highlight mt-1 align-items-center border-bottom" key={index}>
                       <div className="bd-highlight rounded  mb-1">
-                        <img src="src\Images\image2.png" alt="maintenance" style={{ height: "40px", height: "40px" }} />
+                        <img src="src\Images\image2.png" alt="maintenance" style={{ height: "40px"  }} />
                       </div>
                       <div className="ps-2 bd-highlight">
                         <h5 style={{ fontSize: "13px" }}>Roger Lubin</h5>
@@ -274,7 +274,7 @@ const Dashboard = () => {
                 <tbody>
                   <tr>
                     <td className="complainer">
-                      <img src="src/Images/image.png" alt="Complainer" className="complainer-image mb-2 me-2" />
+                      <img src="src/Images/profileimg.png" alt="Complainer" className="complainer-image mb-2 me-2" />
                       Evelyn Harper
                     </td>
                     <td>Unethical Behavior</td>
@@ -300,7 +300,7 @@ const Dashboard = () => {
                   </tr>
                   <tr>
                     <td className="complainer">
-                      <img src="src/Images/image.png" alt="Complainer" className="complainer-image mb-2 me-2" />
+                      <img src="src/Images/profileimg.png" alt="Complainer" className="complainer-image mb-2 me-2" />
                       Evelyn Harper
                     </td>
                     <td>Unethical Behavior</td>
@@ -326,7 +326,7 @@ const Dashboard = () => {
                   </tr>
                   <tr>
                     <td className="complainer">
-                      <img src="src/Images/image.png" alt="Complainer" className="complainer-image mb-2 me-2" />
+                      <img src="src/Images/profileimg.png" alt="Complainer" className="complainer-image mb-2 me-2" />
                       Evelyn Harper
                     </td>
                     <td>Unethical Behavior</td>
@@ -352,7 +352,7 @@ const Dashboard = () => {
                   </tr>
                   <tr>
                     <td className="complainer">
-                      <img src="src/Images/image.png" alt="Complainer" className="complainer-image mb-2 me-2" />
+                      <img src="src/Images/profileimg.png" alt="Complainer" className="complainer-image mb-2 me-2" />
                       Evelyn Harper
                     </td>
                     <td>Unethical Behavior</td>
@@ -378,7 +378,7 @@ const Dashboard = () => {
                   </tr>
                   <tr>
                     <td className="complainer">
-                      <img src="src/Images/image.png" alt="Complainer" className="complainer-image mb-2 me-2" />
+                      <img src="src/Images/profileimg.png" alt="Complainer" className="complainer-image mb-2 me-2" />
                       Evelyn Harper
                     </td>
                     <td>Unethical Behavior</td>
@@ -404,7 +404,7 @@ const Dashboard = () => {
                   </tr>
                   <tr>
                     <td className="complainer">
-                      <img src="src/Images/image.png" alt="Complainer" className="complainer-image mb-2 me-2" />
+                      <img src="src/Images/profileimg.png" alt="Complainer" className="complainer-image mb-2 me-2" />
                       Evelyn Harper
                     </td>
                     <td>Unethical Behavior</td>
@@ -439,15 +439,15 @@ const Dashboard = () => {
               <div className="modal-backdrop show"></div>
               <div className="modal fade show d-block" tabIndex="-1" role="dialog" style={{ backgroundColor: "rgba(0,0,0,0.5)" }}>
                 <div className="modal-dialog">
-                  <div className="modal-content" style={{ width: "400px", marginTop:"200px" }}>
+                  <div className="modal-content" style={{ width: "360px", marginTop:"200px" }}>
                     <div className="modal-header">
                       <h5 className="modal-title">View Complaint</h5>
-                      <button type="button" className="btn-close" onClick={handleCloseViewModal}><FiX size={24} /> {/* Close Icon */}</button>
+                      <button type="button" className="btn-close" onClick={handleCloseViewModal}> </button>
                     </div>
                     <div className="modal-body">
                       <div className="d-flex align-items-center mb-3">
                         <img
-                          src="src/Images/image.png"
+                          src="src/Images/profileimg.png"
                           alt="Complainer"
                           className="rounded-circle me-3"
                           style={{ width: "50px", height: "50px" }}
@@ -603,7 +603,7 @@ const Dashboard = () => {
         </div>
 
         {/* Upcoming Activity */}
-        <div className="col-lg-3">
+        <div className="col-lg-3 mt-2">
           <div className="card upcoming-activity">
             <div className="card-header d-flex justify-content-between align-items-center">
               <h5 style={{ fontSize: "16px" }}>Upcoming Activity</h5>
@@ -614,7 +614,7 @@ const Dashboard = () => {
 
               <div className="maintenance-item d-flex bd-highlight align-items-center border-bottom" >
                 <div className=" bd-highlight rounded">
-                  <img src="src\Images\Group5.png" alt="activity" style={{ height: "40px", height: "40px" }} />
+                  <img src="src\Images\Group5.png" alt="activity" style={{ height: "40px"}}/>
                 </div>
                 <div className="p-2 bd-highlight">
                   <h5 style={{ fontSize: "14px" }}>Society Meeting</h5>
@@ -626,7 +626,7 @@ const Dashboard = () => {
               </div>
               <div className="maintenance-item d-flex bd-highlight align-items-center border-bottom" >
                 <div className=" bd-highlight rounded">
-                  <img src="src\Images\Group6.png" alt="activity" style={{ height: "40px", height: "40px" }} />
+                  <img src="src\Images\Group6.png" alt="activity" style={{ height: "40px"}} />
                 </div>
                 <div className="p-2 bd-highlight">
                   <h5 style={{ fontSize: "14px" }}>Holi Festival </h5>
@@ -638,7 +638,7 @@ const Dashboard = () => {
               </div>
               <div className="maintenance-item d-flex bd-highlight align-items-center border-bottom" >
                 <div className=" bd-highlight rounded">
-                  <img src="src\Images\Group7.png" alt="activity" style={{ height: "40px", height: "40px" }} />
+                  <img src="src\Images\Group7.png" alt="activity" style={{ height: "40px"}} />
                 </div>
                 <div className="p-2 bd-highlight">
                   <h5 style={{ fontSize: "14px" }}>Ganesh Chaturthi</h5>
@@ -650,7 +650,7 @@ const Dashboard = () => {
               </div>
               <div className="maintenance-item d-flex bd-highlight align-items-center border-bottom" >
                 <div className=" bd-highlight rounded">
-                  <img src="src\Images\Group8.png" alt="activity" style={{ height: "40px", height: "40px" }} />
+                  <img src="src\Images\Group8.png" alt="activity" style={{ height: "40px"}} />
                 </div>
                 <div className="p-2 bd-highlight">
                   <h5 style={{ fontSize: "14px" }}>Navratri Festival</h5>
@@ -662,7 +662,7 @@ const Dashboard = () => {
               </div>
               <div className="maintenance-item d-flex bd-highlight align-items-center border-bottom" >
                 <div className=" bd-highlight rounded">
-                  <img src="src\Images\Group7.png" alt="activity" style={{ height: "40px", height: "40px" }} />
+                  <img src="src\Images\Group7.png" alt="activity" style={{ height: "40px"}} />
                 </div>
                 <div className="p-2 bd-highlight">
                   <h5 style={{ fontSize: "14px" }}>Ganesh Chaturthi</h5>
@@ -674,7 +674,7 @@ const Dashboard = () => {
               </div>
               <div className="maintenance-item d-flex bd-highlight align-items-center border-bottom" >
                 <div className=" bd-highlight rounded">
-                  <img src="src\Images\Group6.png" alt="activity" style={{ height: "40px", height: "40px" }} />
+                  <img src="src\Images\Group6.png" alt="activity" style={{ height: "40px"}} />
                 </div>
                 <div className="p-2 bd-highlight">
                   <h5 style={{ fontSize: "14px" }}>Holi Festival </h5>
@@ -686,7 +686,7 @@ const Dashboard = () => {
               </div>
               <div className="maintenance-item d-flex bd-highlight align-items-center border-bottom" >
                 <div className=" bd-highlight rounded">
-                  <img src="src\Images\Group5.png" alt="activity" style={{ height: "40px", height: "40px" }} />
+                  <img src="src\Images\Group5.png" alt="activity" style={{ height: "40px" }} />
                 </div>
                 <div className="p-2 bd-highlight">
                   <h5 style={{ fontSize: "14px" }}>Society Meeting</h5>

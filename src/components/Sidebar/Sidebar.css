@@ -2,6 +2,15 @@ a {
   text-decoration: none;
   color: black;
 }
+.navlink{
+  text-decoration: none;
+  color: black;
+  height: 52px;
+  width: 245px;
+  font-style: poppins;
+  font-weight: 500;
+
+}
 .sidebarbtn{
   text-decoration: none;
   color: black;

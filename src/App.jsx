@@ -21,7 +21,7 @@ const App = () => {
         element: <Layout />,
         children: [
           {
-            path: "/dashboard",
+            path: "/",
             element: <Dashboard />,
           },
           {
