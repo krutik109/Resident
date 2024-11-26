@@ -1,227 +1,120 @@
-import React, { useState } from "react";
-import "./Sidebar.css";
-import { Link, NavLink } from "react-router-dom";
-import { IoMdClose } from "react-icons/io";
 
+import React, { useState } from 'react';
+import './Sidebar.css';
+import { NavLink } from 'react-router-dom';
+import { IoMdClose } from "react-icons/io";
+import { MdDashboard } from "react-icons/md";
+import { IoMdPerson } from "react-icons/io";
+import { RiMoneyDollarBoxFill } from "react-icons/ri";
+import { FaBuilding } from "react-icons/fa";
+import { TbMessage2Cancel } from "react-icons/tb";
+import { AiFillSecurityScan } from "react-icons/ai";
+import { SiSpringsecurity } from "react-icons/si";
+import { GrAnnounce } from "react-icons/gr";
+import { Collapse } from 'react-bootstrap';
+import { IoMdArrowDropdown } from "react-icons/io";
+import { FaPersonChalkboard, FaSdCard } from 'react-icons/fa6';
 
 const Sidebar = ({ toggleSidebar }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isFinancialOpen, setIsFinancialOpen] = useState(false);
+  const [isSecurityOpen, setIsSecurityOpen] = useState(false);
+  const [isComplaintOpen, setIsComplaintOpen] = useState(false);
+
+  const toggleFinancialDropdown = () => {
+    setIsFinancialOpen(!isFinancialOpen);
+  };
+
+  const toggleSecurityDropdown = () => {
+    setIsSecurityOpen(!isSecurityOpen);
+  }
+
+  const toggleComplaintDropdown = () => {
+    setIsComplaintOpen(!isComplaintOpen);
+  }
+
   return (
     <>
-      <div className="row bg-white text-start ">
+      <div className="row">
         {/* Close button for screens up to 767px */}
-        <div className="col-12 d-md-none text-end mt-2">
+        <div className="col-12  d-lg-none text-end mt-2">
           <button className="btn close-btn" onClick={toggleSidebar}>
-            <IoMdClose /> {/* Bootstrap close icon */}
+            <IoMdClose />
           </button>
         </div>
 
-        <div className="col-md-12 mt-3 mb-3">
-          <h2 className="text-center">
-            <span className="mainColor">Dash</span>Stack
-          </h2>
-          <hr />
+        <div className="col-md-12 mt-2 d-flex align-items-center justify-content-center flex-column">
+          <img src='src/Images/logo.png' height={70} className='pt-2' alt="Logo" />
         </div>
+        <hr />
 
-        <div className="col-md-12 d-flex gap-2 mt-1 mb-1">
-          {/* Sidebar Image */}
-          <img
-            src="src/Images/dash.png"
-            className={`sidebarstyle ${isHovered ? "d-inline-block" : "d-none"}`}
-            alt=""
-          />
-
-          {/* NavLink */}
-          <NavLink
-            className="navlink"
-            to="/"
-            style={{
-              textDecoration: "none",
-              color: "black",
-              height: "52px",
-              width: "245px",
-              fontStyle: "poppins",
-              fontWeight: "500",
-            }}
-            onClick={toggleSidebar}
-            onMouseEnter={() => setIsHovered(true)} // Set hover state
-            onMouseLeave={() => setIsHovered(false)} // Reset hover state
-          >
-            <p className="p-2 hovermaincolor">
-              <img className=" " src="src/Images/dashboard.png" alt="" />{" "}
-              Dashboard
-            </p>
+          <NavLink  className="text-decoration-none font_color"  to="/" onClick={toggleSidebar}>
+        <div className="col-md-11 mt-2 mb-2 sidebar_link mx-auto background_color sidebar_link  p-3">
+            <p><MdDashboard className='me-2 fs-4 font_color' /> Dashboard</p>
+        </div>
           </NavLink>
-        </div>
-        <div className="col-md-12 d-flex gap-2 mt-1 mb-1">
-          {/* Sidebar Image */}
-          <img src="src/Images/dash.png" className="sidebarstyle" alt="" />
 
-          {/* NavLink */}
-          <NavLink
-            className="navlink"
-            to="/personaldetail"
-            style={{
-              textDecoration: "none",
-              color: "black",
-              height: "52px",
-              width: "245px",
-              fontStyle: "poppins",
-              fontWeight: "500",
-            }}
-            onClick={toggleSidebar}
-          >
-            <p className="p-2 hovermaincolor">
-              <img className=" " src="src/Images/personalcard.png" alt="" />{" "}
-              Pesonal Details
-            </p>
+          <NavLink className="text-decoration-none font_color" to="/personaldetail" onClick={toggleSidebar}>
+        <div className="col-md-11 mt-2 mb-2 sidebar_link mx-auto p-3">
+            <p ><img className='me-2 fs-4' src="src/Images/personalcard.png" alt="" />
+            Personal Details</p>
+        </div>
           </NavLink>
+          <NavLink className="text-decoration-none font_color" to="/serviceandcomplaint" onClick={toggleSidebar}>
+        <div className="col-md-11 mt-2 mb-2 sidebar_link mx-auto p-3">
+            <p ><img className='me-2 fs-4' src="src/Images/servicecomplain.png" alt="" />Service And Complaint</p>
         </div>
-        <div className="col-md-12 d-flex gap-2 mt-1 mb-1">
-          {/* Sidebar Image */}
-          <img src="src/Images/dash.png" className="sidebarstyle" alt="" />
-
-          {/* NavLink */}
-          <NavLink
-            className="navlink"
-            to="/serviceandcomplaint"
-            style={{
-              textDecoration: "none",
-              color: "",
-              height: "52px",
-              width: "245px",
-              fontStyle: "poppins",
-              fontWeight: "500",
-            }}
-            onClick={toggleSidebar}
-          >
-            <p className="p-2 hovermaincolor">
-              <img className=" " src="src/Images/servicecomplain.png" alt="" />{" "}
-              Service And Complaint
-            </p>
           </NavLink>
+          <NavLink className="text-decoration-none font_color" to="/eventparticipation" onClick={toggleSidebar}>
+        <div className="col-md-11 mt-2 mb-2 sidebar_link mx-auto p-3">
+            <p ><img className='me-2 fs-4' src="src/Images/event.png" alt="" />Event Participation</p>
         </div>
-        <div className=" col-md-12  d-flex gap-2 mt-1 mb-1">
-          <img src="src/Images/dash.png" alt="" />
-          <NavLink
-            className="navlink"
-            to="/eventparticipation"
-          
-            onClick={toggleSidebar}
-          >
-            {/* Close sidebar on link click in small screens */}
-            <p className=" p-2 hovermaincolor">
-              <img src="src/Images/event.png" alt="" /> Event Participation
-            </p>
           </NavLink>
-        </div>
-
-        <div className=" col-md-12 d-flex  mt-1 mb-1">
-          <img src="src/Images/dash.png" alt="" />
-
-          <NavLink
-            className="navlink"
-            to="/"
-            style={{
-              textDecoration: "none",
-              color: "black",
-              height: "52px",
-              width: "245px",
-              fontStyle: "poppins",
-              fontWeight: "500",
-            }}
-            onClick={toggleSidebar}
-          >
-            {/* Close sidebar on link click in small screens */}
-            <div className="dropdown-container hovermaincolor">
-              <button className="dropdown-btn bg-white ">
-                <img
-                  src="src/Images/comunity.png"
-                  alt="icon"
-                  className="dropdown-icon"
-                />
-                Community
-                <span className="dropdown-arrow">▼</span>
-              </button>
-              <div className="dropdown-menu">
-                <Link className="dropdown-item">
-                  <p>Access Forums</p>
-                </Link>
-                <div className="">
-                  <Link to={"/pollapp"} className="dropdown-item">
-                    <p>Polls</p>
-                  </Link>
-                </div>
-                <Link to={"/"} className="dropdown-item">
-                  <p>Communities Discussion</p>
-                </Link>
-              </div>
+   
+        <div className="col-md-11 mt-2 mb-2 sidebar_link mx-auto financial_management_main p-3">
+          <div onClick={toggleSecurityDropdown} style={{ cursor: 'pointer' }}>
+            <p style={{ cursor: 'pointer', fontSize: '14px', fontWeight: '500' }}  className='ms-2 font_color f'><img className='me-2 fs-4' src="src/Images/comunity.png" alt="" /> Comunity</p>
+          </div>
+          {/* Dropdown for security Management */}
+          <Collapse in={isSecurityOpen} className='dropdown-main '>
+            <div className="ps-4">
+              <NavLink className="text-decoration-none font_color " to="/" onClick={toggleSidebar}>
+                <p className="p-3 sub-link">Access Forums</p>
+              </NavLink>
+              <NavLink  className="text-decoration-none font_color" to="/pollapp" onClick={toggleSidebar}>
+                <p className="p-3 sub-link">Polls</p>
+              </NavLink>
+              <NavLink className="text-decoration-none font_color" to="/" onClick={toggleSidebar}>
+                <p className="p-3 sub-link">Communication Discussion</p>
+              </NavLink>
             </div>
-          </NavLink>
+          </Collapse>
         </div>
 
-        <div className=" col-md-12 d-flex  mt-1 mb-1">
-          <img src="src/Images/dash.png" alt="" />
+   
 
-          <NavLink
-            className="navlink"
-            to="/"
-            style={{
-              textDecoration: "none",
-              color: "black",
-              height: "52px",
-              width: "245px",
-              fontStyle: "poppins",
-              fontWeight: "500",
-            }}
-            onClick={toggleSidebar}
-          >
-            {/* Close sidebar on link click in small screens */}
-            <div className="dropdown-container hovermaincolor">
-              <button className="dropdown-btn bg-white ">
-                <img
-                  src="src/Images/wallet.png"
-                  alt="icon"
-                  className="dropdown-icon"
-                />
-                Payment Portal
-                <span className="dropdown-arrow">▼</span>
-              </button>
-              <div className="dropdown-menu">
-                <div className="">
-                  <Link to={"/"} className="dropdown-item">
-                    <p>Maintanance Invoice</p>
-                  </Link>
-                </div>
-                <div className="">
-                  <Link to={"/"} className="dropdown-item">
-                    <p>Other Income Invoice</p>
-                  </Link>
-                </div>
-              </div>
+        <div className="col-md-11 mt-2 mb-2 sidebar_link mx-auto financial_management_main p-3">
+          <div onClick={toggleComplaintDropdown} style={{ cursor: 'pointer' }}>
+            <p style={{ cursor: 'pointer', fontSize: '14px', fontWeight: '500' }} className='ms-2 font_color'><TbMessage2Cancel className='me-2 fs-4 font_color' /> Payment Portal</p>
+          </div>
+
+          {/* Dropdown for Complaint Tracking */}
+          <Collapse in={isComplaintOpen} className='dropdown-main '>
+            <div className="ps-4">
+              <NavLink className="text-decoration-none font_color" to="/ComplaintTracking/CreateComplaint" onClick={toggleSidebar}>
+                <p className="p-3 sub-link">Maintanance Invoices</p>
+              </NavLink>
+              <NavLink className="text-decoration-none font_color" to="/ComplaintTracking/RequestTracking" onClick={toggleSidebar}>
+                <p className=" p-3 sub-link">Other Income Invoice</p>
+              </NavLink>
             </div>
-          </NavLink>
+          </Collapse>
         </div>
-        <div className=" col-md-12  d-flex gap-2 mt-1 mb-1">
-          <img src="src/Images/dash.png" alt="" />
-          <NavLink
-            className="navlink"
-            to="/securityprotocols"
-            style={{
-              textDecoration: "none",
-              color: "black",
-              height: "52px",
-              width: "245px",
-              fontStyle: "poppins",
-              fontWeight: "500",
-            }}
-            onClick={toggleSidebar}
-          >
-            {/* Close sidebar on link click in small screens */}
-            <p className=" p-2 hovermaincolor">
-              <img src="src/Images/securityprotocol.png" alt="" /> Security
-              Protocols
-            </p>
+
+        
+
+        <div className="col-md-11 mt-2 mb-2 sidebar_link mx-auto p-3">
+          <NavLink className="text-decoration-none font_color" to="/securityprotocols" onClick={toggleSidebar}>
+            <p className='ms-2'><GrAnnounce className='me-2 fs-4 font_color' /> Seurity Protocol</p>
           </NavLink>
         </div>
       </div>
