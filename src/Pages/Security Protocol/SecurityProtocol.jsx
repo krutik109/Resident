@@ -92,7 +92,7 @@ const SecurityProtocols = () => {
           <img
             src="src/Images/profileimg.png"
             alt="avatar"
-            className="rounded-circle profileimg me-2"
+            className="  me-2"
           />
           <span className='text-center'>{protocol.title}</span>
         </div>

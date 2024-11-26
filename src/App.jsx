@@ -11,6 +11,10 @@ import ActivityParticipaes from "./Pages/Activity Participate/ActivityParticipat
 import PersonalDetail from "./Pages/Personal Details/PersonalDetail";
 import PersonalDetailTenant from "./Pages/Personal Details/PersonalDetailTenant";
 import ServiceAndComplaint from "./Pages/Service And Complaint/ServiceAndComplaint";
+import MaintenanceInvoices from "./Pages/Maintanance Invoice/MaintananceInvoice";
+import Invoices from "./Pages/Invoices/Invoices";
+import OtherIncomeInvoice from "./Pages/Other Income Invoices/OtherIncomeInvoice";
+
 
 const App = () => {
   const router = createBrowserRouter(
@@ -46,12 +50,25 @@ const App = () => {
             element: <PersonalDetail />,
           },
           {
-            path: "personaldetailtenant",
+            path: "/personaldetailtenant",
             element: <PersonalDetailTenant />,
           },
           {
-            path: "serviceandcomplaint", 
+            path: "/serviceandcomplaint", 
             element: <ServiceAndComplaint/>,
+          }
+          ,{
+            path: "/maintananceinvoice",
+            element: <MaintenanceInvoices/>
+          }
+          ,{
+             path:"/Invoices",
+              element:<Invoices />
+
+          }
+          ,{
+            path:"/OtherIncomeInvoice",
+            element:<OtherIncomeInvoice />
           }
 
         ],

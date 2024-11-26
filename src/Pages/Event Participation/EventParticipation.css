@@ -1,6 +1,7 @@
 .participatebtn{
     padding: 15px 10px; 
-    border-radius:10px; font-size:"14px"; font-weight:500;
+    border-radius:10px 10px 0px 0px; 
+    font-size:"14px"; font-weight:500;
   }
   .participatebtnspan{
     font-size: 16px;

@@ -48,7 +48,7 @@ const EventParticipation = () => {
               className="border-bottom border-2 border-danger"
               to={"/eventparticipation"}
             >
-              <button className="participatebtn hovermaincolor rounded-top bg-white text-dark btn border-bottom">
+              <button className="participatebtn text-white hovermaincolor mainColor2 rounded-top bg-white text-dark btn border-bottom">
                 <span className="participatebtnspan">Events Participate</span>
               </button>
             </Link>

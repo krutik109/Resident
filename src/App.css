@@ -93,7 +93,7 @@ ul li {
 
 .hovermaincolor:hover  {
   color: white;
-  border-radius: 10px;
+
  
   background: linear-gradient(90deg, #fe512e 0%, #f09619 100%);
 }

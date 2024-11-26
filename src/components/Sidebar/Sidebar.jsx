@@ -100,10 +100,10 @@ const Sidebar = ({ toggleSidebar }) => {
           {/* Dropdown for Complaint Tracking */}
           <Collapse in={isComplaintOpen} className='dropdown-main '>
             <div className="ps-4">
-              <NavLink className="text-decoration-none font_color" to="/ComplaintTracking/CreateComplaint" onClick={toggleSidebar}>
+              <NavLink className="text-decoration-none font_color" to="/maintananceinvoice" onClick={toggleSidebar}>
                 <p className="p-3 sub-link">Maintanance Invoices</p>
               </NavLink>
-              <NavLink className="text-decoration-none font_color" to="/ComplaintTracking/RequestTracking" onClick={toggleSidebar}>
+              <NavLink className="text-decoration-none font_color" to="/OtherIncomeInvoice" onClick={toggleSidebar}>
                 <p className=" p-3 sub-link">Other Income Invoice</p>
               </NavLink>
             </div>
