@@ -1,0 +1,101 @@
+.mainColor {
+  color: #fe512e;
+}
+.mainColor2 {
+  border-radius: 10px;
+  font-weight: 500;
+  color: #070202;
+  background: linear-gradient(90deg, #fe512e 0%, #f09619 100%);
+}
+.cancelbtn {
+  border-radius: 10px;
+  width: 141px;
+  color: #000;
+  font-size: 18px;
+  height: 41px;
+}
+.createbtn {
+  width: 141px;
+  color: #000;
+  font-size: 18px;
+  height: 41px;
+  border-radius: 10px;
+}
+.mainColor2:hover {
+  color: #f5f5f5;
+}
+.registerbtn {
+  color: #f6f8fb;
+}
+
+.sidebarbtn {
+  width: 245px;
+  height: 52px;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+.btn1 {
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 60px;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+/* styles.css */
+
+ul li {
+  list-style: none;
+  text-decoration: none;
+}
+.no-underline {
+  text-decoration: none;
+}
+/* App.css */
+.content-area {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f5f5f5; /* Light background for contrast */
+  min-height: 100vh; /* Ensure full height */
+}
+
+/* Ensure full viewport height */
+
+/* Header should take up the full width */
+
+/* Flex container for Sidebar and Main content */
+
+/* Sidebar fixed width */
+
+/* Main content should expand to take remaining space */
+.content-area {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.img-font {
+  font-size: 12px;
+}
+.upload img {
+  max-width: 80px; /* Adjust image size if needed */
+  margin-bottom: 10px;
+}
+.hovermaincolor{
+  color:rgba(79, 79, 79, 1);
+  
+
+}
+
+.hovermaincolor:hover  {
+  color: white;
+
+ 
+  background: linear-gradient(90deg, #fe512e 0%, #f09619 100%);
+}
+
+/* Container */
